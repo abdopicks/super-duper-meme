@@ -1,0 +1,16 @@
+<!--chaque PostListItemComponent affichera le titre, le contenu et la date de création du post dans le template-->
+<li [ngClass]="{ 'list-group-item':true,
+                  'padd':true,
+                  'list-group-item-success': postLoveIts > '0',
+                  'list-group-item-danger': postLoveIts < '0' }">
+  <div class="row">
+    <h4 class="pull-left">{{ postTitle }}</h4> <h4 class="pull-right">{{ postCreatedAt | date:'short' | uppercase }}</h4>
+  </div>
+  <br>
+  <div class="row">
+    <p class="pull-left">{{ postContent }}</p>
+  </div>
+  <!--les PostListItemComponent auront des boutons qui permettent d'augmenter et de diminuer le nombre de loveIts-->
+  <button class="btn btn-success" (click)="getMoreLove()">Love It ({{postLoveIts}})</button>
+  <button class="btn btn-danger" (click)="getLessLove()">Don't Love It</button>
+</li>
