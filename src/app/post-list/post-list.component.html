@@ -1,0 +1,10 @@
+<!--PostListComponent affichera un PostListItemComponent pour chaque post dans l'array qu'il a reçu-->
+<ul class="list-group">
+  <app-post-list-item *ngFor="let post of posts;let i = index"
+                      [postTitle]= "post.title"
+                      [postContent]= "post.content"
+                      [postCreatedAt]= "post.createdAt"
+                      [postLoveIts]= "post.loveIts"
+                      [id]="i">
+  </app-post-list-item>
+</ul>
